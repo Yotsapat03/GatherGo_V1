@@ -610,7 +610,7 @@ async function ensureDemoParticipant({ eventId, userId, bookingId, shirtSize = "
   if (!eventId || !userId) return null;
   const columns = await getTableColumnSet("participants");
   const participantSource = columns.has("source")
-    ? await pickEnumSafe("participants", "source", "payment")
+    ? await pickEnumSafe("participants", "source", "booking")
     : null;
   const participantStatus = columns.has("status")
     ? await pickEnumSafe("participants", "status", "joined")
