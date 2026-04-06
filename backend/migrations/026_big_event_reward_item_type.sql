@@ -1,0 +1,6 @@
+BEGIN;
+
+ALTER TABLE public.event_media
+ADD COLUMN IF NOT EXISTS item_type TEXT;
+
+COMMIT;

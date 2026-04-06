@@ -1,0 +1,6 @@
+BEGIN;
+
+ALTER TABLE public.events
+ADD COLUMN IF NOT EXISTS district TEXT;
+
+COMMIT;

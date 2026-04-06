@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.cjs",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup:demo": "node scripts/setup-demo.cjs",
+    "db:migrate": "node scripts/apply-migrations.cjs",
+    "db:preflight": "node scripts/db-preflight.cjs",
+    "db:seed-demo": "node scripts/seed-demo.cjs",
+    "test:moderation": "node moderation-test-runner.cjs",
+    "test:safety-moderation": "node moderation-safety-test-runner.cjs",
+    "test:chat-regression": "node chat-moderation-regression-runner.cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "multer": "^2.0.2",
+    "openai": "^6.27.0",
+    "pg": "^8.18.0",
+    "stripe": "^20.3.1"
+  }
+}

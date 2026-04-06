@@ -1,0 +1,89 @@
+term,normalized_term,category,severity,language,source_module,source_id,entry_type
+à¸à¸°à¸«à¸£à¸µà¹ˆ,à ̧à ̧°à ̧«à ̧£à ̧μà1ˆ,hate_speech,high,mixed,rules,hate_speech_slurs,keyword
+à¹„à¸­à¹‰à¸¥à¸²à¸§,à1„à ̧­à1‰à ̧¥à ̧2à ̧§,hate_speech,high,mixed,rules,hate_speech_slurs,keyword
+æ”¯é‚£,æ” ̄é‚£,hate_speech,high,mixed,rules,hate_speech_slurs,keyword
+chink,chink,hate_speech,high,en,rules,hate_speech_slurs,keyword
+country of ladyboys,country of ladyboys,hate_speech,high,en,knowledge,hate_speech_transphobic_country_stereotype,alias
+fa99ot,fa99ot,hate_speech,high,en,knowledge,hate_speech_homophobic_variants,alias
+fag,fag,hate_speech,high,en,knowledge,hate_speech_homophobic_variants,alias
+faggot,faggot,hate_speech,high,en,knowledge,hate_speech_homophobic_variants,alias
+ladyboy country,ladyboy country,hate_speech,high,en,knowledge,hate_speech_transphobic_country_stereotype,alias
+nigger,nigger,hate_speech,high,en,rules,hate_speech_slurs,keyword
+à¸„à¸§à¸¢,à ̧„à ̧§à ̧¢,profanity,medium,mixed,rules,thai_profanity_core,keyword
+à¸”à¸­à¸,à ̧”à ̧­à ̧,profanity,medium,mixed,rules,thai_profanity_core,keyword
+à¸«à¸µ,à ̧«à ̧μ,profanity,medium,mixed,rules,thai_profanity_core,keyword
+à¸ªà¸±à¸ª,à ̧aà ̧±à ̧a,profanity,medium,en,rules,thai_profanity_core,keyword
+å‚»é€¼,å‚»é€1⁄4,profanity,medium,mixed,rules,chinese_profanity_core,keyword
+å¦ˆçš„,å¦ˆçš„,profanity,medium,mixed,rules,chinese_profanity_core,keyword
+à¹€à¸«à¸µà¹‰à¸¢,à1€à ̧«à ̧μà1‰à ̧¢,profanity,medium,mixed,rules,thai_profanity_core,keyword
+à¹€à¸§à¸£,à1€à ̧§à ̧£,profanity,medium,mixed,rules,thai_profanity_core,keyword
+à¹€à¸¢à¹‡à¸”,à1€à ̧¢à1‡à ̧”,profanity,medium,mixed,rules,thai_profanity_core,keyword
+æ“,æ“,profanity,medium,mixed,rules,chinese_profanity_core,keyword
+åºŸç‰©,åoÿç‰©,profanity,medium,en,rules,chinese_profanity_core,keyword
+asshole,asshole,profanity,medium,en,rules,english_profanity_core,keyword
+bastard,bastard,profanity,medium,en,vocabulary,seed_vocabulary,seed_term
+bastard,bastard,profanity,medium,en,rules,english_profanity_core,keyword
+bitch,bitch,profanity,medium,en,rules,english_profanity_core,keyword
+ç¬¨è›‹,ç¬ ̈è›‹,profanity,medium,mixed,rules,chinese_profanity_core,keyword
+damn,damn,profanity,medium,en,rules,english_profanity_core,keyword
+fuck,fuck,profanity,medium,en,vocabulary,seed_vocabulary,seed_term
+fuck,fuck,profanity,medium,en,rules,english_profanity_core,keyword
+motherfucker,motherfucker,profanity,high,en,vocabulary,seed_vocabulary,seed_term
+motherfucker,motherfucker,profanity,medium,en,rules,english_profanity_core,keyword
+shit,shit,profanity,medium,en,vocabulary,seed_vocabulary,seed_term
+shit,shit,profanity,medium,en,rules,english_profanity_core,keyword
+ควย,ควย,profanity,medium,th,vocabulary,seed_vocabulary,seed_term
+ควย,ควย,profanity,medium,th,rules,thai_profanity_unicode_core,keyword
+เย็ด,เย็ด,profanity,medium,th,rules,thai_profanity_unicode_core,keyword
+สัส,สัส,profanity,medium,th,vocabulary,seed_vocabulary,seed_term
+สัส,สัส,profanity,medium,th,rules,thai_profanity_unicode_core,keyword
+หี,หี,profanity,medium,th,rules,thai_profanity_unicode_core,keyword
+เหี้ย,เหี้ย,profanity,medium,th,vocabulary,seed_vocabulary,seed_term
+เหี้ย,เหี้ย,profanity,medium,th,rules,thai_profanity_unicode_core,keyword
+操,操,profanity,medium,zh,vocabulary,seed_vocabulary,seed_term
+dm telegram,dm telegram,scam_risk,high,en,knowledge,scam_off_platform_contact_variants,alias
+line id,line id,scam_risk,high,en,knowledge,scam_off_platform_contact_variants,alias
+telegram me,telegram me,scam_risk,high,en,knowledge,scam_off_platform_contact_variants,alias
+wa.me,wa.me,scam_risk,high,en,knowledge,scam_off_platform_contact_variants,alias
+ทักไลน์,ทักไลน์,scam_risk,high,th,knowledge,scam_off_platform_contact_variants,alias
+แอดไลน์,แอดไลน์,scam_risk,high,th,knowledge,scam_off_platform_contact_variants,alias
+à¸«à¸¸à¹ˆà¸™à¸”à¸µ,à ̧«à ̧ ̧à1ˆà ̧tmà ̧”à ̧μ,sexual_ambiguous,medium,th,vocabulary,seed_vocabulary,seed_term
+ä½ å¥½éªš,ä1⁄2 å¥1⁄2éaš,sexual_ambiguous,medium,zh,vocabulary,seed_vocabulary,seed_term
+hot body,hot body,sexual_ambiguous,medium,en,vocabulary,seed_vocabulary,seed_term
+sexy,sexy,sexual_ambiguous,medium,en,vocabulary,seed_vocabulary,seed_term
+เงี่ยน,เงี่ยน,sexual_ambiguous,medium,th,knowledge,sexual_ambiguous_th_horny,alias
+หื่น,หื่น,sexual_ambiguous,medium,th,knowledge,sexual_ambiguous_th_horny,alias
+à¸‚à¸­à¹€à¸¢à¹‡à¸”,à ̧‚à ̧­à1€à ̧¢à1‡à ̧”,sexual_harassment,critical,mixed,rules,sexual_harassment_keywords,keyword
+à¸ˆà¸±à¸šà¸™à¸¡,à ̧ˆà ̧±à ̧šà ̧tmà ̧¡,sexual_harassment,critical,en,rules,sexual_harassment_keywords,keyword
+å¼€æˆ¿,å1⁄4€æˆ¿,sexual_harassment,critical,mixed,rules,sexual_harassment_keywords,keyword
+boob pic,boob pic,sexual_harassment,critical,en,knowledge,sexual_harassment_nudes_variants,alias
+çº¦ç‚®,ço¦ç‚®,sexual_harassment,critical,en,rules,sexual_harassment_keywords,keyword
+é™ªç¡,étmaç¡,sexual_harassment,critical,en,rules,sexual_harassment_keywords,keyword
+n00ds,n00ds,sexual_harassment,critical,en,knowledge,sexual_harassment_nudes_variants,alias
+pervert,pervert,sexual_harassment,high,en,vocabulary,seed_vocabulary,seed_term
+send noods,send noods,sexual_harassment,critical,en,knowledge,sexual_harassment_nudes_variants,alias
+send nudes,send nudes,sexual_harassment,critical,en,knowledge,sexual_harassment_nudes_variants,alias
+send nudes,send nudes,sexual_harassment,critical,en,rules,sexual_harassment_keywords,keyword
+show boobs,show boobs,sexual_harassment,critical,en,rules,sexual_harassment_keywords,keyword
+ขอมีเซ็กซ์,ขอมีเซ็กซ์,sexual_harassment,critical,th,rules,sexual_harassment_unicode_keywords,keyword
+เย็ด,เย็ด,sexual_harassment,critical,th,rules,sexual_harassment_unicode_keywords,keyword
+开房,开房,sexual_harassment,critical,zh,rules,sexual_harassment_unicode_keywords,keyword
+约炮,约炮,sexual_harassment,critical,zh,rules,sexual_harassment_unicode_keywords,keyword
+陪睡,陪睡,sexual_harassment,critical,zh,rules,sexual_harassment_unicode_keywords,keyword
+dickhead,dickhead,targeted_abuse,high,en,vocabulary,seed_vocabulary,seed_term
+idiot,idiot,targeted_abuse,medium,en,vocabulary,seed_vocabulary,seed_term
+moron,moron,targeted_abuse,medium,en,vocabulary,seed_vocabulary,seed_term
+piece of shit,piece of shit,targeted_abuse,high,en,vocabulary,seed_vocabulary,seed_term
+มึง,มึง,targeted_abuse,medium,th,vocabulary,seed_vocabulary,seed_term
+เย็ดแม่,เย็ดแม่,targeted_abuse,high,th,vocabulary,seed_vocabulary,seed_term
+อีเหี้ย,อีเหี้ย,targeted_abuse,high,th,vocabulary,seed_vocabulary,seed_term
+ไอ้สัส,ไอ้สัส,targeted_abuse,high,th,vocabulary,seed_vocabulary,seed_term
+傻逼,傻逼,targeted_abuse,high,zh,vocabulary,seed_vocabulary,seed_term
+去死,去死,targeted_abuse,high,zh,vocabulary,seed_vocabulary,seed_term
+滚开,滚开,targeted_abuse,high,zh,vocabulary,seed_vocabulary,seed_term
+à¹„à¸›à¸•à¸²à¸¢,à1„à ̧›à ̧•à ̧2à ̧¢,threat,critical,th,vocabulary,seed_vocabulary,seed_term
+åŽ»æ­»,åž»æ­»,threat,critical,zh,vocabulary,seed_vocabulary,seed_term
+go die,go die,threat,critical,en,vocabulary,seed_vocabulary,seed_term
+i will hurt you,i will hurt you,threat,critical,en,vocabulary,seed_vocabulary,seed_term
+kill yourself,kill yourself,threat,critical,en,knowledge,threat_self_harm_kys,alias
+kys,kys,threat,critical,en,knowledge,threat_self_harm_kys,alias

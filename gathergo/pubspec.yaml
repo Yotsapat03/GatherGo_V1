@@ -1,0 +1,77 @@
+name: gathergo
+description: GatherGo Admin / App (Flutter)
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  image_picker: ^1.1.2
+  http: ^1.2.2
+  shared_preferences: ^2.3.3
+  cupertino_icons: ^1.0.8
+  google_maps_flutter: ^2.9.0
+  geocoding: ^3.0.0
+  url_launcher: ^6.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/logo.png
+    - assets/images/welcome.png
+    - assets/images/big_event/add.png
+    - assets/images/big_event/add_picture.png
+    - assets/images/home/audit.png
+    - assets/images/home/big_event.png
+    - assets/images/home/event_report.png
+    - assets/images/home/overall.png
+    - assets/images/home/setting_icon.png
+    - assets/images/home/user.png
+    - assets/images/home/user_icon.png
+    - assets/images/equal.png
+    - assets/images/payment/alipay.png
+    - assets/images/payment/promptpay.png
+    - assets/images/user/events/event1.png
+    - assets/images/user/events/event2.png
+    - assets/images/user/events/event3.png
+    - assets/images/user/icons/add.png
+    - assets/images/user/icons/alipay.png
+    - assets/images/user/icons/back.png
+    - assets/images/user/icons/bigEvent.png
+    - assets/images/user/icons/cancel.png
+    - assets/images/user/icons/compare_badge.png
+    - assets/images/user/icons/compare_bolt.png
+    - assets/images/user/icons/compare_swords.png
+    - assets/images/user/icons/compare_warning.png
+    - assets/images/user/icons/createEvent.png
+    - assets/images/user/icons/home.png
+    - assets/images/user/icons/id_card.png
+    - assets/images/user/icons/joinedEvent.png
+    - assets/images/user/icons/myEvent.png
+    - assets/images/user/icons/promptPay.png
+    - assets/images/user/icons/spot.png
+    - assets/images/user/icons/success.png
+    - assets/images/user/icons/uploadReceipt.png
+    - assets/images/user/icons/winCup.png
+    - assets/images/user/images/bg.jpg
+    - assets/images/user/payment/bank.png
+    - assets/images/user/payment/prompt.png
+    - assets/images/user/spots/spot1.png
+    - assets/images/user/spots/spot2.png
+    - assets/images/user/spots/spot3.png
+
+  fonts:
+    - family: Inika
+      fonts:
+        - asset: assets/images/user/fonts/Inika-Regular.ttf
+        - asset: assets/images/user/fonts/Inika-Bold.ttf

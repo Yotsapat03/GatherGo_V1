@@ -1,0 +1,921 @@
+{
+  "generated_at": "2026-03-12T08:39:35.257Z",
+  "total_terms": 88,
+  "category_summary": [
+    {
+      "category": "hate_speech",
+      "count": 10
+    },
+    {
+      "category": "profanity",
+      "count": 32
+    },
+    {
+      "category": "scam_risk",
+      "count": 6
+    },
+    {
+      "category": "sexual_ambiguous",
+      "count": 6
+    },
+    {
+      "category": "sexual_harassment",
+      "count": 17
+    },
+    {
+      "category": "targeted_abuse",
+      "count": 11
+    },
+    {
+      "category": "threat",
+      "count": 6
+    }
+  ],
+  "notes": [
+    "This export contains explicit keyword and alias entries used by the internal moderation system.",
+    "Regex-only rules are not included here because they are pattern-based rather than literal terms.",
+    "Some legacy source entries may require cleanup if the repository contains historical encoding issues."
+  ],
+  "items": [
+    {
+      "term": "à¸à¸°à¸«à¸£à¸µà¹ˆ",
+      "normalized_term": "à ̧à ̧°à ̧«à ̧£à ̧μà1ˆ",
+      "category": "hate_speech",
+      "severity": "high",
+      "language": "mixed",
+      "source_module": "rules",
+      "source_id": "hate_speech_slurs",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "à¹„à¸­à¹‰à¸¥à¸²à¸§",
+      "normalized_term": "à1„à ̧­à1‰à ̧¥à ̧2à ̧§",
+      "category": "hate_speech",
+      "severity": "high",
+      "language": "mixed",
+      "source_module": "rules",
+      "source_id": "hate_speech_slurs",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "æ”¯é‚£",
+      "normalized_term": "æ” ̄é‚£",
+      "category": "hate_speech",
+      "severity": "high",
+      "language": "mixed",
+      "source_module": "rules",
+      "source_id": "hate_speech_slurs",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "chink",
+      "normalized_term": "chink",
+      "category": "hate_speech",
+      "severity": "high",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "hate_speech_slurs",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "country of ladyboys",
+      "normalized_term": "country of ladyboys",
+      "category": "hate_speech",
+      "severity": "high",
+      "language": "en",
+      "source_module": "knowledge",
+      "source_id": "hate_speech_transphobic_country_stereotype",
+      "entry_type": "alias"
+    },
+    {
+      "term": "fa99ot",
+      "normalized_term": "fa99ot",
+      "category": "hate_speech",
+      "severity": "high",
+      "language": "en",
+      "source_module": "knowledge",
+      "source_id": "hate_speech_homophobic_variants",
+      "entry_type": "alias"
+    },
+    {
+      "term": "fag",
+      "normalized_term": "fag",
+      "category": "hate_speech",
+      "severity": "high",
+      "language": "en",
+      "source_module": "knowledge",
+      "source_id": "hate_speech_homophobic_variants",
+      "entry_type": "alias"
+    },
+    {
+      "term": "faggot",
+      "normalized_term": "faggot",
+      "category": "hate_speech",
+      "severity": "high",
+      "language": "en",
+      "source_module": "knowledge",
+      "source_id": "hate_speech_homophobic_variants",
+      "entry_type": "alias"
+    },
+    {
+      "term": "ladyboy country",
+      "normalized_term": "ladyboy country",
+      "category": "hate_speech",
+      "severity": "high",
+      "language": "en",
+      "source_module": "knowledge",
+      "source_id": "hate_speech_transphobic_country_stereotype",
+      "entry_type": "alias"
+    },
+    {
+      "term": "nigger",
+      "normalized_term": "nigger",
+      "category": "hate_speech",
+      "severity": "high",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "hate_speech_slurs",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "à¸„à¸§à¸¢",
+      "normalized_term": "à ̧„à ̧§à ̧¢",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "mixed",
+      "source_module": "rules",
+      "source_id": "thai_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "à¸”à¸­à¸",
+      "normalized_term": "à ̧”à ̧­à ̧",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "mixed",
+      "source_module": "rules",
+      "source_id": "thai_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "à¸«à¸µ",
+      "normalized_term": "à ̧«à ̧μ",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "mixed",
+      "source_module": "rules",
+      "source_id": "thai_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "à¸ªà¸±à¸ª",
+      "normalized_term": "à ̧aà ̧±à ̧a",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "thai_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "å‚»é€¼",
+      "normalized_term": "å‚»é€1⁄4",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "mixed",
+      "source_module": "rules",
+      "source_id": "chinese_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "å¦ˆçš„",
+      "normalized_term": "å¦ˆçš„",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "mixed",
+      "source_module": "rules",
+      "source_id": "chinese_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "à¹€à¸«à¸µà¹‰à¸¢",
+      "normalized_term": "à1€à ̧«à ̧μà1‰à ̧¢",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "mixed",
+      "source_module": "rules",
+      "source_id": "thai_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "à¹€à¸§à¸£",
+      "normalized_term": "à1€à ̧§à ̧£",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "mixed",
+      "source_module": "rules",
+      "source_id": "thai_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "à¹€à¸¢à¹‡à¸”",
+      "normalized_term": "à1€à ̧¢à1‡à ̧”",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "mixed",
+      "source_module": "rules",
+      "source_id": "thai_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "æ“",
+      "normalized_term": "æ“",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "mixed",
+      "source_module": "rules",
+      "source_id": "chinese_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "åºŸç‰©",
+      "normalized_term": "åoÿç‰©",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "chinese_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "asshole",
+      "normalized_term": "asshole",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "english_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "bastard",
+      "normalized_term": "bastard",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "bastard",
+      "normalized_term": "bastard",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "english_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "bitch",
+      "normalized_term": "bitch",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "english_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "ç¬¨è›‹",
+      "normalized_term": "ç¬ ̈è›‹",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "mixed",
+      "source_module": "rules",
+      "source_id": "chinese_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "damn",
+      "normalized_term": "damn",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "english_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "fuck",
+      "normalized_term": "fuck",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "fuck",
+      "normalized_term": "fuck",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "english_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "motherfucker",
+      "normalized_term": "motherfucker",
+      "category": "profanity",
+      "severity": "high",
+      "language": "en",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "motherfucker",
+      "normalized_term": "motherfucker",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "english_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "shit",
+      "normalized_term": "shit",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "shit",
+      "normalized_term": "shit",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "english_profanity_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "ควย",
+      "normalized_term": "ควย",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "th",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "ควย",
+      "normalized_term": "ควย",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "th",
+      "source_module": "rules",
+      "source_id": "thai_profanity_unicode_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "เย็ด",
+      "normalized_term": "เย็ด",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "th",
+      "source_module": "rules",
+      "source_id": "thai_profanity_unicode_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "สัส",
+      "normalized_term": "สัส",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "th",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "สัส",
+      "normalized_term": "สัส",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "th",
+      "source_module": "rules",
+      "source_id": "thai_profanity_unicode_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "หี",
+      "normalized_term": "หี",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "th",
+      "source_module": "rules",
+      "source_id": "thai_profanity_unicode_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "เหี้ย",
+      "normalized_term": "เหี้ย",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "th",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "เหี้ย",
+      "normalized_term": "เหี้ย",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "th",
+      "source_module": "rules",
+      "source_id": "thai_profanity_unicode_core",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "操",
+      "normalized_term": "操",
+      "category": "profanity",
+      "severity": "medium",
+      "language": "zh",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "dm telegram",
+      "normalized_term": "dm telegram",
+      "category": "scam_risk",
+      "severity": "high",
+      "language": "en",
+      "source_module": "knowledge",
+      "source_id": "scam_off_platform_contact_variants",
+      "entry_type": "alias"
+    },
+    {
+      "term": "line id",
+      "normalized_term": "line id",
+      "category": "scam_risk",
+      "severity": "high",
+      "language": "en",
+      "source_module": "knowledge",
+      "source_id": "scam_off_platform_contact_variants",
+      "entry_type": "alias"
+    },
+    {
+      "term": "telegram me",
+      "normalized_term": "telegram me",
+      "category": "scam_risk",
+      "severity": "high",
+      "language": "en",
+      "source_module": "knowledge",
+      "source_id": "scam_off_platform_contact_variants",
+      "entry_type": "alias"
+    },
+    {
+      "term": "wa.me",
+      "normalized_term": "wa.me",
+      "category": "scam_risk",
+      "severity": "high",
+      "language": "en",
+      "source_module": "knowledge",
+      "source_id": "scam_off_platform_contact_variants",
+      "entry_type": "alias"
+    },
+    {
+      "term": "ทักไลน์",
+      "normalized_term": "ทักไลน์",
+      "category": "scam_risk",
+      "severity": "high",
+      "language": "th",
+      "source_module": "knowledge",
+      "source_id": "scam_off_platform_contact_variants",
+      "entry_type": "alias"
+    },
+    {
+      "term": "แอดไลน์",
+      "normalized_term": "แอดไลน์",
+      "category": "scam_risk",
+      "severity": "high",
+      "language": "th",
+      "source_module": "knowledge",
+      "source_id": "scam_off_platform_contact_variants",
+      "entry_type": "alias"
+    },
+    {
+      "term": "à¸«à¸¸à¹ˆà¸™à¸”à¸µ",
+      "normalized_term": "à ̧«à ̧ ̧à1ˆà ̧tmà ̧”à ̧μ",
+      "category": "sexual_ambiguous",
+      "severity": "medium",
+      "language": "th",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "ä½ å¥½éªš",
+      "normalized_term": "ä1⁄2 å¥1⁄2éaš",
+      "category": "sexual_ambiguous",
+      "severity": "medium",
+      "language": "zh",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "hot body",
+      "normalized_term": "hot body",
+      "category": "sexual_ambiguous",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "sexy",
+      "normalized_term": "sexy",
+      "category": "sexual_ambiguous",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "เงี่ยน",
+      "normalized_term": "เงี่ยน",
+      "category": "sexual_ambiguous",
+      "severity": "medium",
+      "language": "th",
+      "source_module": "knowledge",
+      "source_id": "sexual_ambiguous_th_horny",
+      "entry_type": "alias"
+    },
+    {
+      "term": "หื่น",
+      "normalized_term": "หื่น",
+      "category": "sexual_ambiguous",
+      "severity": "medium",
+      "language": "th",
+      "source_module": "knowledge",
+      "source_id": "sexual_ambiguous_th_horny",
+      "entry_type": "alias"
+    },
+    {
+      "term": "à¸‚à¸­à¹€à¸¢à¹‡à¸”",
+      "normalized_term": "à ̧‚à ̧­à1€à ̧¢à1‡à ̧”",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "mixed",
+      "source_module": "rules",
+      "source_id": "sexual_harassment_keywords",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "à¸ˆà¸±à¸šà¸™à¸¡",
+      "normalized_term": "à ̧ˆà ̧±à ̧šà ̧tmà ̧¡",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "sexual_harassment_keywords",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "å¼€æˆ¿",
+      "normalized_term": "å1⁄4€æˆ¿",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "mixed",
+      "source_module": "rules",
+      "source_id": "sexual_harassment_keywords",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "boob pic",
+      "normalized_term": "boob pic",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "en",
+      "source_module": "knowledge",
+      "source_id": "sexual_harassment_nudes_variants",
+      "entry_type": "alias"
+    },
+    {
+      "term": "çº¦ç‚®",
+      "normalized_term": "ço¦ç‚®",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "sexual_harassment_keywords",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "é™ªç¡",
+      "normalized_term": "étmaç¡",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "sexual_harassment_keywords",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "n00ds",
+      "normalized_term": "n00ds",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "en",
+      "source_module": "knowledge",
+      "source_id": "sexual_harassment_nudes_variants",
+      "entry_type": "alias"
+    },
+    {
+      "term": "pervert",
+      "normalized_term": "pervert",
+      "category": "sexual_harassment",
+      "severity": "high",
+      "language": "en",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "send noods",
+      "normalized_term": "send noods",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "en",
+      "source_module": "knowledge",
+      "source_id": "sexual_harassment_nudes_variants",
+      "entry_type": "alias"
+    },
+    {
+      "term": "send nudes",
+      "normalized_term": "send nudes",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "en",
+      "source_module": "knowledge",
+      "source_id": "sexual_harassment_nudes_variants",
+      "entry_type": "alias"
+    },
+    {
+      "term": "send nudes",
+      "normalized_term": "send nudes",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "sexual_harassment_keywords",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "show boobs",
+      "normalized_term": "show boobs",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "en",
+      "source_module": "rules",
+      "source_id": "sexual_harassment_keywords",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "ขอมีเซ็กซ์",
+      "normalized_term": "ขอมีเซ็กซ์",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "th",
+      "source_module": "rules",
+      "source_id": "sexual_harassment_unicode_keywords",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "เย็ด",
+      "normalized_term": "เย็ด",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "th",
+      "source_module": "rules",
+      "source_id": "sexual_harassment_unicode_keywords",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "开房",
+      "normalized_term": "开房",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "zh",
+      "source_module": "rules",
+      "source_id": "sexual_harassment_unicode_keywords",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "约炮",
+      "normalized_term": "约炮",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "zh",
+      "source_module": "rules",
+      "source_id": "sexual_harassment_unicode_keywords",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "陪睡",
+      "normalized_term": "陪睡",
+      "category": "sexual_harassment",
+      "severity": "critical",
+      "language": "zh",
+      "source_module": "rules",
+      "source_id": "sexual_harassment_unicode_keywords",
+      "entry_type": "keyword"
+    },
+    {
+      "term": "dickhead",
+      "normalized_term": "dickhead",
+      "category": "targeted_abuse",
+      "severity": "high",
+      "language": "en",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "idiot",
+      "normalized_term": "idiot",
+      "category": "targeted_abuse",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "moron",
+      "normalized_term": "moron",
+      "category": "targeted_abuse",
+      "severity": "medium",
+      "language": "en",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "piece of shit",
+      "normalized_term": "piece of shit",
+      "category": "targeted_abuse",
+      "severity": "high",
+      "language": "en",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "มึง",
+      "normalized_term": "มึง",
+      "category": "targeted_abuse",
+      "severity": "medium",
+      "language": "th",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "เย็ดแม่",
+      "normalized_term": "เย็ดแม่",
+      "category": "targeted_abuse",
+      "severity": "high",
+      "language": "th",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "อีเหี้ย",
+      "normalized_term": "อีเหี้ย",
+      "category": "targeted_abuse",
+      "severity": "high",
+      "language": "th",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "ไอ้สัส",
+      "normalized_term": "ไอ้สัส",
+      "category": "targeted_abuse",
+      "severity": "high",
+      "language": "th",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "傻逼",
+      "normalized_term": "傻逼",
+      "category": "targeted_abuse",
+      "severity": "high",
+      "language": "zh",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "去死",
+      "normalized_term": "去死",
+      "category": "targeted_abuse",
+      "severity": "high",
+      "language": "zh",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "滚开",
+      "normalized_term": "滚开",
+      "category": "targeted_abuse",
+      "severity": "high",
+      "language": "zh",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "à¹„à¸›à¸•à¸²à¸¢",
+      "normalized_term": "à1„à ̧›à ̧•à ̧2à ̧¢",
+      "category": "threat",
+      "severity": "critical",
+      "language": "th",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "åŽ»æ­»",
+      "normalized_term": "åž»æ­»",
+      "category": "threat",
+      "severity": "critical",
+      "language": "zh",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "go die",
+      "normalized_term": "go die",
+      "category": "threat",
+      "severity": "critical",
+      "language": "en",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "i will hurt you",
+      "normalized_term": "i will hurt you",
+      "category": "threat",
+      "severity": "critical",
+      "language": "en",
+      "source_module": "vocabulary",
+      "source_id": "seed_vocabulary",
+      "entry_type": "seed_term"
+    },
+    {
+      "term": "kill yourself",
+      "normalized_term": "kill yourself",
+      "category": "threat",
+      "severity": "critical",
+      "language": "en",
+      "source_module": "knowledge",
+      "source_id": "threat_self_harm_kys",
+      "entry_type": "alias"
+    },
+    {
+      "term": "kys",
+      "normalized_term": "kys",
+      "category": "threat",
+      "severity": "critical",
+      "language": "en",
+      "source_module": "knowledge",
+      "source_id": "threat_self_harm_kys",
+      "entry_type": "alias"
+    }
+  ]
+}
