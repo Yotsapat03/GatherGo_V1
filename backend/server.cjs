@@ -425,11 +425,25 @@ const multer = require("multer");
 
 // ✅ Stripe
 const Stripe = require("stripe");
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const stripeSecretKey = String(process.env.STRIPE_SECRET_KEY ?? "").trim();
+const stripeWebhookSecret = String(process.env.STRIPE_WEBHOOK_SECRET ?? "").trim();
+const stripe = stripeSecretKey ? new Stripe(stripeSecretKey) : null;
 const airwallex = require("./airwallex.cjs");
 const antom = require("./antom.cjs");
 
 const app = express();
+
+if (stripe) {
+  console.log("[payments] Stripe integration enabled");
+} else {
+  console.warn("[payments] Stripe integration disabled: STRIPE_SECRET_KEY is not configured");
+}
+
+function stripeUnavailableResponse(res) {
+  return res.status(503).json({
+    message: "Stripe integration is not configured on this server",
+  });
+}
 
 // ✅ Enhanced CORS for Flutter Web + Admin Dashboard
 const allowedOrigins = new Set([
@@ -4822,7 +4836,7 @@ async function loadEventPaymentMethods(client, eventId) {
           promptpayRow?.qr_image_url ?? getManualQrForMethod(eventRow, "PROMPTPAY"),
         is_active: promptpayRow?.is_active ?? enablePromptpay,
         manual_available: !!getManualQrForMethod(eventRow, "PROMPTPAY"),
-        stripe_available: isStripeBranchAllowed(eventRow) && enablePromptpay,
+        stripe_available: !!stripe && isStripeBranchAllowed(eventRow) && enablePromptpay,
         amount: paymentSummary.promptpay_amount_thb,
         currency: "THB",
         fx_rate_used: paymentSummary.exchange_rate_thb_per_cny,
@@ -5268,11 +5282,14 @@ async function ensurePendingBigEventBooking(client, { eventId, userId, amount, c
 // Canonical Stripe PaymentIntent webhook path:
 // stripe listen --forward-to http://localhost:3000/api/stripe/webhook
 app.post("/api/stripe/webhook", express.raw({ type: "application/json" }), async (req, res) => {
+  if (!stripe || !stripeWebhookSecret) {
+    return res.status(503).send("Stripe webhook is not configured on this server");
+  }
   const sig = req.headers["stripe-signature"];
   let evt;
 
   try {
-    evt = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    evt = stripe.webhooks.constructEvent(req.body, sig, stripeWebhookSecret);
   } catch (err) {
     console.log("Webhook signature verify failed:", err.message);
     return res.status(400).send(`Webhook Error: ${err.message}`);
@@ -5670,11 +5687,14 @@ app.post("/api/stripe/webhook", express.raw({ type: "application/json" }), async
 
 // Legacy Checkout webhook path kept for older flows. Use /api/stripe/webhook for PaymentIntent flows.
 app.post("/api/webhooks/stripe", express.raw({ type: "application/json" }), async (req, res) => {
+  if (!stripe || !stripeWebhookSecret) {
+    return res.status(503).send("Stripe webhook is not configured on this server");
+  }
   const sig = req.headers["stripe-signature"];
   let evt;
 
   try {
-    evt = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    evt = stripe.webhooks.constructEvent(req.body, sig, stripeWebhookSecret);
   } catch (err) {
     console.log("❌ Webhook signature verify failed:", err.message);
     return res.status(400).send(`Webhook Error: ${err.message}`);
@@ -11492,7 +11512,7 @@ app.put("/api/admin/big-events/:id/payment-methods", async (req, res) => {
           is_active: !!eventRow.enable_promptpay,
           qr_image_url: toAbsoluteUrl(req, eventRow.manual_promptpay_qr_url),
           manual_available: !!eventRow.manual_promptpay_qr_url,
-          stripe_available: paymentMode !== "manual_qr" && !!eventRow.enable_promptpay,
+          stripe_available: !!stripe && paymentMode !== "manual_qr" && !!eventRow.enable_promptpay,
           amount: Number(eventRow.promptpay_amount_thb ?? eventRow.fee ?? 0),
           currency: "THB",
           fx_rate_used: Number(eventRow.exchange_rate_thb_per_cny ?? 0),
@@ -11512,6 +11532,9 @@ app.post("/api/stripe/create-payment-intent", async (req, res) => {
   const client = await pool.connect();
   let txStarted = false;
   try {
+    if (!stripe) {
+      return stripeUnavailableResponse(res);
+    }
     await ensureBusinessReferenceColumns();
     const userCtx = getRequestUserId(req, { allowQuery: false, allowBody: true });
     if (!userCtx.ok) {
@@ -12963,6 +12986,9 @@ app.post("/api/big-events/:id/checkout/alipay", async (req, res) => {
 app.post("/api/big-events/:id/checkout/promptpay", async (req, res) => {
   const client = await pool.connect();
   try {
+    if (!stripe) {
+      return stripeUnavailableResponse(res);
+    }
     await ensureBusinessReferenceColumns();
     const eventId = Number(req.params.id);
     const quantity = Number(req.body?.quantity);
@@ -13291,7 +13317,7 @@ app.get("/api/payments/:paymentId", async (req, res) => {
       shouldSyncStripeStatus,
     });
 
-    if (shouldSyncStripeStatus) {
+    if (shouldSyncStripeStatus && stripe) {
       try {
         let paymentIntent = null;
         let stripeStatus = "";
@@ -14334,6 +14360,9 @@ app.get("/paid-cancel", (_, res) => {
  */
 app.post("/api/stripe/checkout-session", async (req, res) => {
   try {
+    if (!stripe) {
+      return stripeUnavailableResponse(res);
+    }
     const { event_id, quantity } = req.body ?? {};
     const userCtx = getRequestUserId(req, { allowQuery: false, allowBody: true });
     if (!userCtx.ok) {

@@ -75,11 +75,13 @@ Required for a basic local demo:
 - `DATABASE_URL`
 - `PORT`
 
+The backend now stops with a clear startup error if `DATABASE_URL` is missing.
+
 Optional and safe to leave blank if you only need core app flows:
 
 - `OPENAI_API_KEY`: enables AI moderation assistance
 - `GOOGLE_MAPS_API_KEY`: enables map/geocoding-related features
-- `STRIPE_SECRET_KEY`, `STRIPE_PUBLISHABLE_KEY`, `STRIPE_WEBHOOK_SECRET`: enables Stripe checkout flows
+- `STRIPE_SECRET_KEY`, `STRIPE_PUBLISHABLE_KEY`, `STRIPE_WEBHOOK_SECRET`: enables Stripe checkout flows; if left blank, Stripe-specific endpoints are disabled but the main local demo can still run
 - `AIRWALLEX_*`: enables Airwallex/Alipay payment flows
 - `ANTOM_*`: enables Antom/Alipay integration paths
 
@@ -179,11 +181,11 @@ Demo data also includes:
 
 For more DB-specific details, see:
 
-- [DB_SETUP.md](C:\mobileapp\GatherGo\DB_SETUP.md)
+- [DB_SETUP.md](./DB_SETUP.md)
 
 For a quick explanation of available environment variables, see:
 
-- [backend/.env.example](C:\mobileapp\GatherGo\backend\.env.example)
+- [backend/.env.example](./backend/.env.example)
 
 ## Recommended demo scope
 
@@ -204,4 +206,4 @@ If you are setting this up only to review the project locally:
 3. Start backend with `npm start`
 4. Run Flutter with `--dart-define API_URL=...`
 
-That is enough for the main demo scope even if third-party payment or AI keys are missing.
+That is enough for the main demo scope even if third-party payment or AI keys are missing, as long as `DATABASE_URL` is configured.

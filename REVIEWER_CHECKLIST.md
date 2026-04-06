@@ -7,7 +7,8 @@ Use this checklist when cloning the project for a local review.
 1. Create PostgreSQL database
 2. Copy `backend/.env.example` to `backend/.env`
 3. Set `DATABASE_URL`
-4. Run:
+4. Keep optional provider keys blank unless you want to test those integrations
+5. Run:
 
 ```bash
 cd backend
@@ -16,7 +17,7 @@ npm run setup:demo
 npm start
 ```
 
-5. Run Flutter:
+6. Run Flutter:
 
 ```bash
 cd gathergo
@@ -39,6 +40,7 @@ flutter run --dart-define API_URL=http://localhost:3000
 
 - some advanced payment-provider paths may still depend on extra environment setup
 - third-party services such as OpenAI, Stripe, Google Maps, and Airwallex may need environment keys
+- Stripe-specific routes are disabled automatically when `STRIPE_SECRET_KEY` is not configured
 - local uploads are intentionally excluded from Git and may not exist in a fresh clone
 - if `API_URL` still points to `localhost`, use your machine IP instead when testing from a phone or another device
 

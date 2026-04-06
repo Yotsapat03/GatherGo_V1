@@ -4,8 +4,8 @@ This folder contains the Flutter frontend for GatherGo.
 
 For the full local setup flow, including backend and database preparation, see:
 
-- [README.md](C:\mobileapp\GatherGo\README.md)
-- [DB_SETUP.md](C:\mobileapp\GatherGo\DB_SETUP.md)
+- [README.md](../README.md)
+- [DB_SETUP.md](../DB_SETUP.md)
 
 ## Quick start
 

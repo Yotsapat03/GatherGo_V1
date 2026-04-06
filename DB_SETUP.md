@@ -22,6 +22,8 @@ Required:
 - `DATABASE_URL`
 - `PORT`
 
+If `DATABASE_URL` is missing, the backend now fails fast at startup with a clear error instead of silently using a placeholder connection string.
+
 Optional:
 
 - `OPENAI_API_KEY`
@@ -31,6 +33,7 @@ Optional:
 - `ANTOM_*`
 
 The demo database bootstrap does not require the optional keys above.
+Stripe-specific routes are disabled automatically when `STRIPE_SECRET_KEY` is not configured.
 
 ## Demo credentials
 

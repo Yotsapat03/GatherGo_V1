@@ -1,11 +1,12 @@
-// db.cjs
 const { Pool } = require("pg");
 
-// ✅ ใช้ DATABASE_URL เป็นหลัก (เหมาะกับ deploy)
-// ✅ มี fallback สำหรับรันบนเครื่องตอน dev
-const connectionString =
-  process.env.DATABASE_URL ||
-  "postgresql://postgres:YOUR_PASSWORD@localhost:5432/run_event_db2";
+const connectionString = String(process.env.DATABASE_URL ?? "").trim();
+
+if (!connectionString) {
+  throw new Error(
+    "DATABASE_URL is required. Copy backend/.env.example to backend/.env and set DATABASE_URL before starting the backend."
+  );
+}
 
 const pool = new Pool({ connectionString });
 
