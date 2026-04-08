@@ -1,209 +1,304 @@
-# GatherGo
+# 🏃‍♂️ GatherGo V1 — Running Event Platform (Production-Ready Demo)
 
-GatherGo is a Flutter + Node.js project with:
+## 📌 Overview
 
-- user/admin app flows
-- spot event features
-- spot chat moderation
-- reporting and moderation tools
+**GatherGo V1** is a full-stack running event platform designed to connect runners through social activities and structured events.
+The system supports both **user-generated running sessions (Spot Activities)** and **official events (Big Events)** managed by administrators.
 
-This repository is being prepared so other people can clone it and try a local demo setup without using the original developer database.
+This repository is prepared for **local demo setup**, allowing reviewers to clone and run the system without access to the original developer database.
 
-## Repo structure
+---
 
-- `gathergo/`: Flutter application
-- `backend/`: Node.js + PostgreSQL backend
-- `backend/migrations/`: tracked SQL migrations
-- `backend/scripts/`: local database setup scripts
+## 🎯 Project Purpose
 
-## Current portability status
+GatherGo is designed to:
 
-Portable enough for local demo setup:
+* Connect runners through **community-based activities**
+* Provide structured participation via **official running events**
+* Enhance safety using **AI-assisted chat moderation**
+* Support event organization through an **admin management system**
 
-- user auth
-- admin auth
-- big-event base flows
-- spot events
-- spot moderation tables
-- moderation learning/vocabulary tables
+The system integrates social interaction, event participation, and moderation into a unified platform.
 
-Still more fragile than the rest of the repo:
+---
 
-- advanced payment-provider flows
-- some production-oriented payment edge cases
+## 🚀 Core Features
 
-## Prerequisites
+### 👤 User Features
 
-Install these first:
+* User registration and authentication
+* Join **Big Events**
+* Create and join **Spot Activities**
+* Real-time chat with moderation system
+* Track participation and running distance
 
-- Node.js 18+ recommended
-- PostgreSQL 14+ recommended
-- Flutter SDK
+### 🛠️ Admin Features
 
-## Backend setup
+* Manage Big Events
+* Monitor user activity
+* Review reports and moderation logs
+* Control system-level data
 
-1. Go to the backend folder
+### ⚙️ System Features
+
+* Role-Based Access Control (RBAC)
+* AI-assisted chat moderation (optional)
+* QR-based payment integration (optional)
+* Relational database with constraints (PostgreSQL)
+
+---
+
+## 🏗️ System Architecture
+
+* **Frontend:** Flutter (Mobile / Web)
+* **Backend:** Node.js (Express, CommonJS)
+* **Database:** PostgreSQL (Relational Database)
+
+The system follows a **client-server architecture**:
+
+* Flutter communicates with backend APIs
+* Backend handles business logic and validation
+* PostgreSQL stores structured relational data
+
+---
+
+## 🗄️ Database Design
+
+* Designed using **Relational Model (3NF)**
+* Enforced **Foreign Key Constraints**
+* Structured modules include:
+
+  * Users & Roles
+  * Big Events & Spots
+  * Chat & Moderation
+  * Payments & Receipts
+
+For full schema details, see:
+
+* `DB_SETUP.md`
+* `backend/.env.example`
+
+---
+
+## 🧱 Tech Stack (Actual Implementation)
+
+### Backend
+
+* Node.js (CommonJS - `.cjs`)
+* Express.js
+* PostgreSQL
+
+### Frontend
+
+* Flutter (Dart)
+
+### Optional Integrations
+
+* OpenAI (AI moderation)
+* Stripe (payments)
+* Google Maps API
+
+---
+
+## 📁 Repository Structure
+
+```
+gathergo/      → Flutter application
+backend/       → Node.js + PostgreSQL backend
+backend/migrations/ → SQL migrations
+backend/scripts/    → setup scripts
+```
+
+---
+
+## ⚙️ Backend Setup
 
 ```bash
 cd backend
-```
-
-2. Install dependencies
-
-```bash
 npm install
 ```
 
-3. Copy the example environment file and fill in what you need
+### Create environment file
 
-Windows PowerShell:
+**Windows**
 
 ```powershell
 Copy-Item .env.example .env
 ```
 
-macOS/Linux:
+**macOS/Linux**
 
 ```bash
 cp .env.example .env
 ```
 
-4. Update `.env`
+---
 
-Required for a basic local demo:
+### 🔑 Required Environment Variables
 
-- `DATABASE_URL`
-- `PORT`
+```env
+DATABASE_URL=
+PORT=
+```
 
-The backend now stops with a clear startup error if `DATABASE_URL` is missing.
+The backend will fail to start if `DATABASE_URL` is missing.
 
-Optional and safe to leave blank if you only need core app flows:
+---
 
-- `OPENAI_API_KEY`: enables AI moderation assistance
-- `GOOGLE_MAPS_API_KEY`: enables map/geocoding-related features
-- `STRIPE_SECRET_KEY`, `STRIPE_PUBLISHABLE_KEY`, `STRIPE_WEBHOOK_SECRET`: enables Stripe checkout flows; if left blank, Stripe-specific endpoints are disabled but the main local demo can still run
-- `AIRWALLEX_*`: enables Airwallex/Alipay payment flows
-- `ANTOM_*`: enables Antom/Alipay integration paths
+### 🧩 Optional Variables
 
-5. Run database migrations
+* `OPENAI_API_KEY`
+* `GOOGLE_MAPS_API_KEY`
+* `STRIPE_*`
+* `AIRWALLEX_*`
+* `ANTOM_*`
+
+These enable advanced features but are **not required for demo**.
+
+---
+
+## 🗃️ Database Setup
 
 ```bash
 npm run db:migrate
-```
-
-6. Check database readiness
-
-```bash
 npm run db:preflight
-```
-
-7. Seed demo data
-
-```bash
 npm run db:seed-demo
 ```
 
-Or run the full database bootstrap in one step:
+Or run everything in one step:
 
 ```bash
 npm run setup:demo
 ```
 
-8. Start backend
+---
+
+## ▶️ Start Backend
 
 ```bash
 npm start
 ```
 
-Default backend URL:
+Default:
 
-- `http://localhost:3000`
+```
+http://localhost:3000
+```
 
-## Flutter setup
+---
 
-1. Open another terminal
+## 📱 Flutter Setup
 
 ```bash
 cd gathergo
-```
-
-2. Install Flutter packages
-
-```bash
 flutter pub get
 ```
 
-3. Run the app and point it to the backend
-
-Web/Desktop:
+### Run (Web/Desktop)
 
 ```bash
 flutter run --dart-define API_URL=http://localhost:3000
 ```
 
-Android emulator:
+### Android Emulator
 
 ```bash
 flutter run --dart-define API_URL=http://10.0.2.2:3000
 ```
 
-If testing on a physical device, replace with your machine IP:
+### Physical Device
 
 ```bash
 flutter run --dart-define API_URL=http://YOUR_LOCAL_IP:3000
 ```
 
-## Demo accounts
+---
 
-After `npm run db:seed-demo`:
+🔑 Demo Accounts
 
-- Admin: `admin.demo@gathergo.local` / `Admin123!`
-- User: `runner.one@gathergo.local` / `Runner123!`
-- User: `runner.two@gathergo.local` / `Runner123!`
+You can use the following accounts after running npm run db:seed-demo:
 
-Demo data also includes:
+👤 Users
+User 1
+Email: a@b.com
+Password: 12345678
 
-- 1 demo organization
-- 1 demo big event
-- 1 demo booking
-- 1 demo payment
-- 1 demo receipt
-- 1 demo spot
+User 2
+Email: b@c.com
+Password: 12345678
 
-## Important notes
+User 3
+Email: c@d.com
+Password: 12345678
+🛠️ Admin
+Email: admin@test.com
+Password: MyPassword123
 
-1. Do not commit `backend/.env`
-2. Do not commit `backend/uploads`
-3. Do not commit real production or personal database dumps
-4. Some advanced third-party payment flows may still need extra environment setup
+⚠️ Note:
 
-## Database notes
+These are demo accounts for testing purposes only
+Data can be reset anytime using the seed script
 
-For more DB-specific details, see:
+---
 
-- [DB_SETUP.md](./DB_SETUP.md)
+## ⚠️ Limitations
 
-For a quick explanation of available environment variables, see:
+* Some payment integrations require external provider approval
+* AI moderation requires API keys
+* Certain production edge cases are not fully covered in demo mode
 
-- [backend/.env.example](./backend/.env.example)
+---
 
-## Recommended demo scope
+## ✅ Production-Ready Aspects
 
-If you are sharing this repo with a lecturer or reviewer, the safest demo scope right now is:
+* Structured backend architecture
+* Database migrations and seed system
+* Environment-based configuration
+* Error handling and validation
+* Clear separation between user and admin systems
 
-- login
-- admin login
-- big-event listing and booking
-- spot features
-- spot moderation
+---
 
-## Reviewer shortcut
+## 🧪 Recommended Demo Scope
 
-If you are setting this up only to review the project locally:
+For reviewers:
 
-1. Configure `DATABASE_URL` in `backend/.env`
-2. Run `cd backend && npm install && npm run setup:demo`
-3. Start backend with `npm start`
-4. Run Flutter with `--dart-define API_URL=...`
+* User login
+* Admin login
+* Big Event participation
+* Spot activities
+* Chat moderation
 
-That is enough for the main demo scope even if third-party payment or AI keys are missing, as long as `DATABASE_URL` is configured.
+---
+
+## ⚡ Reviewer Quick Start
+
+```bash
+cd backend
+npm install
+npm run setup:demo
+npm start
+```
+
+Then:
+
+```bash
+cd gathergo
+flutter run --dart-define API_URL=http://localhost:3000
+```
+
+---
+
+## 🚫 Important Notes
+
+* Do NOT commit `backend/.env`
+* Do NOT commit `backend/uploads`
+* Do NOT upload real production data
+
+---
+
+## 📌 Final Note
+
+This project focuses on demonstrating a **real working system with backend + database integration**, suitable for academic evaluation, demo presentation, and system validation.
+
+---
