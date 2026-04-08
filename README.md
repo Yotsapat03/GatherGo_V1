@@ -1,110 +1,109 @@
-# 🏃‍♂️ GatherGo V1 — Running Event Platform (Production-Ready Demo)
+# 🏃‍♂️ GatherGo V1 — Running Event Platform (Local Demo System)
 
 ## 📌 Overview
 
-**GatherGo V1** is a full-stack running event platform designed to connect runners through social activities and structured events.
-The system supports both **user-generated running sessions (Spot Activities)** and **official events (Big Events)** managed by administrators.
+**GatherGo V1** is a full-stack running event platform that supports:
 
-This repository is prepared for **local demo setup**, allowing reviewers to clone and run the system without access to the original developer database.
+* User-created running sessions (**Spot Activities**)
+* Admin-controlled events (**Big Events**)
 
----
-
-## 🎯 Project Purpose
-
-GatherGo is designed to:
-
-* Connect runners through **community-based activities**
-* Provide structured participation via **official running events**
-* Enhance safety using **AI-assisted chat moderation**
-* Support event organization through an **admin management system**
-
-The system integrates social interaction, event participation, and moderation into a unified platform.
+This repository is configured for **local development and demo usage**, allowing the system to run without access to the original production database.
 
 ---
 
-## 🚀 Core Features
+## 🎯 System Scope
 
-### 👤 User Features
+The current implementation focuses on:
 
-* User registration and authentication
-* Join **Big Events**
-* Create and join **Spot Activities**
-* Real-time chat with moderation system
-* Track participation and running distance
+* Backend + database integration
+* Local demo environment setup
+* Core user and admin flows
 
-### 🛠️ Admin Features
+This version is intended for **testing, demonstration, and reviewer validation**
 
+---
+
+## 🚀 Core Features (Implemented)
+
+### 👤 User
+
+* Register / Login
+* Join Big Events
+* Create / Join Spot Activities
+* Chat in Spot rooms
+* Basic activity participation tracking
+
+---
+
+### 🛠️ Admin
+
+* Admin authentication
 * Manage Big Events
-* Monitor user activity
-* Review reports and moderation logs
-* Control system-level data
-
-### ⚙️ System Features
-
-* Role-Based Access Control (RBAC)
-* AI-assisted chat moderation (optional)
-* QR-based payment integration (optional)
-* Relational database with constraints (PostgreSQL)
+* Access system data for monitoring
 
 ---
 
-## 🏗️ System Architecture
+### ⚙️ System
 
-* **Frontend:** Flutter (Mobile / Web)
-* **Backend:** Node.js (Express, CommonJS)
-* **Database:** PostgreSQL (Relational Database)
-
-The system follows a **client-server architecture**:
-
-* Flutter communicates with backend APIs
-* Backend handles business logic and validation
-* PostgreSQL stores structured relational data
+* Role-based access (user / admin)
+* Chat moderation (rule-based + optional AI support)
+* Database-driven logic (PostgreSQL)
+* Local demo data seeding
 
 ---
 
-## 🗄️ Database Design
+## 🏗️ Architecture (Actual Implementation)
 
-* Designed using **Relational Model (3NF)**
-* Enforced **Foreign Key Constraints**
-* Structured modules include:
+* **Frontend:** Flutter
+* **Backend:** Node.js (Express, CommonJS `.cjs`)
+* **Database:** PostgreSQL
 
-  * Users & Roles
-  * Big Events & Spots
-  * Chat & Moderation
-  * Payments & Receipts
+Flow:
 
-For full schema details, see:
+* Flutter → API → Backend
+* Backend → Database (PostgreSQL)
+
+---
+
+## 🗄️ Database
+
+* Relational database (PostgreSQL)
+* Uses:
+
+  * Foreign key relationships
+  * Structured tables for:
+
+    * Users
+    * Events (Big Event / Spot)
+    * Chat & moderation
+    * Payments (partial)
+
+See:
 
 * `DB_SETUP.md`
-* `backend/.env.example`
+* `backend/migrations/`
 
 ---
 
-## 🧱 Tech Stack (Actual Implementation)
+## 🧱 Tech Stack
 
 ### Backend
 
-* Node.js (CommonJS - `.cjs`)
-* Express.js
+* Node.js
+* Express
 * PostgreSQL
 
 ### Frontend
 
 * Flutter (Dart)
 
-### Optional Integrations
-
-* OpenAI (AI moderation)
-* Stripe (payments)
-* Google Maps API
-
 ---
 
-## 📁 Repository Structure
+## 📁 Project Structure
 
 ```
 gathergo/      → Flutter application
-backend/       → Node.js + PostgreSQL backend
+backend/       → API + database logic
 backend/migrations/ → SQL migrations
 backend/scripts/    → setup scripts
 ```
@@ -120,13 +119,13 @@ npm install
 
 ### Create environment file
 
-**Windows**
+Windows:
 
 ```powershell
 Copy-Item .env.example .env
 ```
 
-**macOS/Linux**
+macOS/Linux:
 
 ```bash
 cp .env.example .env
@@ -134,26 +133,26 @@ cp .env.example .env
 
 ---
 
-### 🔑 Required Environment Variables
+## 🔑 Required Environment Variables
 
 ```env
 DATABASE_URL=
 PORT=
 ```
 
-The backend will fail to start if `DATABASE_URL` is missing.
+If `DATABASE_URL` is missing, the backend will not start.
 
 ---
 
-### 🧩 Optional Variables
+## 🧩 Optional Configuration
 
-* `OPENAI_API_KEY`
-* `GOOGLE_MAPS_API_KEY`
-* `STRIPE_*`
-* `AIRWALLEX_*`
-* `ANTOM_*`
+These enable additional features but are **not required for demo**:
 
-These enable advanced features but are **not required for demo**.
+* OPENAI_API_KEY → AI moderation support
+* GOOGLE_MAPS_API_KEY → map-related features
+* STRIPE_* → Stripe payment flow (partial support)
+* AIRWALLEX_* → Airwallex integration (scaffold)
+* ANTOM_* → Antom/Alipay integration (scaffold)
 
 ---
 
@@ -165,7 +164,7 @@ npm run db:preflight
 npm run db:seed-demo
 ```
 
-Or run everything in one step:
+Or:
 
 ```bash
 npm run setup:demo
@@ -194,84 +193,48 @@ cd gathergo
 flutter pub get
 ```
 
-### Run (Web/Desktop)
+Run:
 
 ```bash
 flutter run --dart-define API_URL=http://localhost:3000
 ```
 
-### Android Emulator
+---
 
-```bash
-flutter run --dart-define API_URL=http://10.0.2.2:3000
-```
+## 🔑 Demo Accounts
 
-### Physical Device
+After seeding:
 
-```bash
-flutter run --dart-define API_URL=http://YOUR_LOCAL_IP:3000
-```
+### 👤 Users
+
+* [a@b.com](mailto:a@b.com) / 12345678
+* [b@c.com](mailto:b@c.com) / 12345678
+* [c@d.com](mailto:c@d.com) / 12345678
+
+### 🛠️ Admin
+
+* [admin@test.com](mailto:admin@test.com) / MyPassword123
 
 ---
 
-🔑 Demo Accounts
+## ⚠️ Current Limitations
 
-You can use the following accounts after running npm run db:seed-demo:
-
-👤 Users
-User 1
-Email: a@b.com
-Password: 12345678
-
-User 2
-Email: b@c.com
-Password: 12345678
-
-User 3
-Email: c@d.com
-Password: 12345678
-🛠️ Admin
-Email: admin@test.com
-Password: MyPassword123
-
-⚠️ Note:
-
-These are demo accounts for testing purposes only
-Data can be reset anytime using the seed script
-
----
-
-## ⚠️ Limitations
-
-* Some payment integrations require external provider approval
-* AI moderation requires API keys
-* Certain production edge cases are not fully covered in demo mode
-
----
-
-## ✅ Production-Ready Aspects
-
-* Structured backend architecture
-* Database migrations and seed system
-* Environment-based configuration
-* Error handling and validation
-* Clear separation between user and admin systems
+* Payment integrations are **partially implemented / require external setup**
+* AI moderation depends on API configuration
+* Some flows are designed for demo, not full production usage
 
 ---
 
 ## 🧪 Recommended Demo Scope
 
-For reviewers:
-
-* User login
-* Admin login
+* Login (user / admin)
 * Big Event participation
 * Spot activities
-* Chat moderation
+* Chat moderation behavior
 
 ---
 
-## ⚡ Reviewer Quick Start
+## ⚡ Quick Start (Reviewer)
 
 ```bash
 cd backend
@@ -293,12 +256,16 @@ flutter run --dart-define API_URL=http://localhost:3000
 
 * Do NOT commit `backend/.env`
 * Do NOT commit `backend/uploads`
-* Do NOT upload real production data
+* Do NOT use real production data
 
 ---
 
-## 📌 Final Note
+## 📌 Notes
 
-This project focuses on demonstrating a **real working system with backend + database integration**, suitable for academic evaluation, demo presentation, and system validation.
+This project demonstrates a **working backend + database system** with a Flutter frontend, suitable for:
+
+* Local demo
+* System testing
+* Academic evaluation
 
 ---
