@@ -151,9 +151,6 @@ These enable additional features but are **not required for demo**:
 * OPENAI_API_KEY → AI moderation support
 * GOOGLE_MAPS_API_KEY → map-related features
 * STRIPE_* → Stripe payment flow (partial support)
-* AIRWALLEX_* → Airwallex integration (scaffold)
-* ANTOM_* → Antom/Alipay integration (scaffold)
-
 ---
 
 ## 🗃️ Database Setup
