@@ -136,8 +136,8 @@ cp .env.example .env
 ## 🔑 Required Environment Variables
 
 ```env
-DATABASE_URL=
-PORT=
+DATABASE_URL= postgresql://postgres:Ee125403@localhost:5432/run_event_db2
+PORT= 3000
 ```
 
 If `DATABASE_URL` is missing, the backend will not start.
